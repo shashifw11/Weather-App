@@ -17,14 +17,24 @@ export const Search = ({handleChange}) =>{
   
       console.log(search_data) 
     
-     
+     let key = "XrybJhqBNzAmp7PzoIiWmMxhhy3Du6Ky"
+     // https://developer.accuweather.com/user/me/apps 
+
   const searchData = async ()=>{
         try{ 
-           setLoading(true)
-          axios.get(`http://localhost:8080/data?q=${text}`).then((data)=>{
-                 return  setSearch_data(data.data)
-            })
-               }catch(err){
+      //      setLoading(true)
+      //  axios.get(`http://localhost:8080/data?q=${text}`)
+      //  .then((data)=>{
+      //             //http://localhost:8080/data?q=${text}
+      //       return  setSearch_data(data.data) 
+      //    }) 
+
+        const res = await fetch(`http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=${key}&q=${text}`)
+           const data = await res.json() ; 
+           setSearch_data(data) 
+            //console.log(data); 
+      
+      }catch(err){
                   console.log("err", err); 
               }
               setLoading(false)
@@ -87,7 +97,7 @@ export const Search = ({handleChange}) =>{
               boxShadow = "rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;"  
               lineHeight='20px' letterSpacing='wide'  fontSize='xl' bg='white' 
               w='100%' p={8} color='black' key = {i}
-              ><p style = {{display : "flex"}}><p style = {{fontWeight : "lighter"}}>{item.city} , </p><p>{item.state}</p></p></Box>
+              ><p style = {{display : "flex"}}><p style = {{fontWeight : "lighter"}}>{item.AdministrativeArea.LocalizedName} , </p><p>{item.Country.LocalizedName}</p></p></Box>
       // </Link>
       ))}
       </div>

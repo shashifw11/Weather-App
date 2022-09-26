@@ -18,19 +18,19 @@ const Home = () => {
     }
    
     useEffect(()=>{
-        getData() ; 
+        // getData() ; 
          console.log("kumar")
       }, [city])
     
 
    const key = "6e1d2dbf1530ff10a9e01675f07f8f53" 
 
-   async function getData(){
-      const res =  await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}`)
-      const data = res 
-          setCloud(data.data)
-        console.log("shashi")
-    }
+  //  async function getData(){
+  //     const res =  await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}`)
+  //     const data = res 
+  //         setCloud(data.data)
+  //       console.log("shashi")
+  //   }
 
   
 
