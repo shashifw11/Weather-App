@@ -1,0 +1,175 @@
+{
+    "data" : [
+        { 
+            "id" : "1" , 
+           "state": "Andaman and Nicobar Islands" , 
+            "city" : "Port Blair"
+        },
+        { 
+            "id" : "2" , 
+           "state": "Andhra Pradesh" , 
+            "city" : "Amaravati"
+        },
+        { 
+            "id" : "3" , 
+           "state": "Arunachal Pradesh" , 
+            "city" : "Itanagar"
+        },
+        { 
+            "id" : "4" , 
+           "state": "Assam" , 
+            "city" : "Dispur"
+        },
+        { 
+            "id" : "4" , 
+           "state":  "Bihar" , 
+            "city" : "patna"
+        },
+        { 
+            "id" : "5" , 
+           "state":   "Chandigarh" , 
+            "city" : "Chandigarh"
+        },
+        { 
+            "id" : "6" , 
+           "state":   "Chhattisgarh" , 
+            "city" : "Raipur"
+        },
+        { 
+            "id" : "7" , 
+           "state":  "Delhi", 
+            "city" : "New Delhi"
+        },
+        { 
+            "id" : "8" , 
+           "state":   "Goa", 
+            "city" : "Panaji"
+        },
+        { 
+            "id" : "9" , 
+           "state":   "Gujarat", 
+            "city" : "Gandhinagar"
+        },
+        { 
+            "id" : "10" , 
+           "state":   "Gujarat", 
+            "city" : "Gandhinagar"
+        },
+        { 
+            "id" : "11" , 
+           "state":  "Haryana", 
+            "city" : "Chandigarh"
+        },
+        { 
+            "id" : "12" , 
+           "state":  "Himachal Pradesh", 
+            "city" : "Shimla"
+        },
+        { 
+            "id" : "13" , 
+           "state":  "Jammu and Kashmir", 
+            "city" : "kasmir"
+        },
+        { 
+            "id" : "14" , 
+           "state":  "Jharkhand", 
+            "city" : "ranchi"
+        },
+        { 
+            "id" : "15" , 
+           "state":  "Karnataka", 
+            "city" : "Bengaluru"
+        },
+        { 
+            "id" : "16" , 
+           "state":  "Kerala", 
+            "city" : "Thiruvananthapuram"
+        },
+        { 
+            "id" : "17" , 
+           "state":  "Madhya Pradesh", 
+            "city" : "Bhopal"
+        },
+        { 
+            "id" : "18" , 
+           "state":   "Maharashtra", 
+            "city" : "mumbai"
+        },
+        { 
+            "id" : "19" , 
+           "state":  "Manipur", 
+            "city" : "Imphal"
+        },
+        { 
+            "id" : "20" , 
+           "state":   "Meghalaya", 
+            "city" : "Shillong"
+        },
+        { 
+            "id" : "21" , 
+           "state":   "Mizoram", 
+            "city" : "Aizawl"
+        },
+        { 
+            "id" : "22" , 
+           "state":  "Nagaland", 
+            "city" : "Kohima"
+        },
+        { 
+            "id" : "23" , 
+           "state":   "Odisha", 
+            "city" : "Bhubaneswar"
+        },
+        { 
+            "id" : "24" , 
+           "state":  "Puducherry", 
+            "city" : "Pondicherry"
+        },
+        { 
+            "id" : "25" , 
+           "state":   "Punjab", 
+            "city" : "Amritsar"
+        },
+        { 
+            "id" : "26" , 
+           "state": "Rajasthan", 
+            "city" : "Jaipur"
+        },
+        { 
+            "id" : "27" , 
+           "state":   "Tamil Nadu", 
+            "city" : "Chennai"
+        },
+        { 
+            "id" : "28" , 
+           "state":  "Telangana", 
+            "city" : "Hyderabad"
+        },
+        { 
+            "id" : "29" , 
+           "state":  "Tripura", 
+            "city" : "Agartala"
+        },
+        { 
+            "id" : "30" , 
+           "state":  "Uttar Pradesh", 
+            "city" : "Lucknow"
+        },
+        { 
+            "id" : "31" , 
+           "state":  "Uttarakhand", 
+            "city" : "Dehradun"
+        },
+        { 
+            "id" : "31" , 
+           "state":  "West Bengal", 
+            "city" : "Kolkata"
+        },
+        { 
+            "id" : "32" , 
+           "state":  "Sikkim", 
+            "city" : "Gangtok"
+        }
+    ]
+
+}
