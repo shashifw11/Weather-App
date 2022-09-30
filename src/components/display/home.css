@@ -1,0 +1,93 @@
+.container{
+    width  : 430px ;
+    height : 650px ;
+     margin : auto ;
+      margin-top : 50px  ; 
+       border-radius : 15px ;
+       border : 2px solid white ; 
+       box-shadow : rgba(0, 0, 0, 0.15) 0px 2px 8px
+}
+.main-box{
+    width : 400px ;  
+    margin : auto ; 
+    margin-top : 40px ; 
+}
+
+.Temp-box{
+   width : 100% ; 
+   box-shadow : rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em ; 
+  padding : 4px ; 
+  border-radius : 20px;
+  height : 500px ; 
+  border : 1px solid red
+} 
+
+.Upper-temp-box{
+    display : flex ; 
+    width :90%; 
+    margin : auto ;  
+     text-align : left;
+      padding : 3px ;  
+      font-size : 40px; 
+      font-weight : bolder; 
+      height :100px ; 
+      border : 1px solid red
+} 
+
+.day-temp-box{
+    width : 90% ; 
+    margin : auto ; 
+    height : 150px ; 
+    border : 1px solid red ; 
+}
+.temp-image{
+    width : 20% ; 
+}
+
+.current-temp-box{
+    display : flex ; 
+    justify-content : space-around ;
+    border : 1px solid red ; 
+    height : 100px ; 
+} ; 
+
+
+/* w = "42%" h = {14} mt = {5} p = {1} bg = "#f5faff"  */
+
+.inside-current-box{
+    width : 42% ; 
+    height : 40px ; 
+    margin-top : 10px ; 
+    padding : 10px ; 
+    background-color : gray 
+}
+
+.current-temp-box2{
+    display : flex ; 
+    justify-content : space-around ;
+    border : 1px solid red ; 
+    height : 100px ; 
+} ; 
+
+   .inside-current-box2{
+    width : 30% ;  
+    height : 14px ;  
+     margin-top : 5px ;  
+    padding : 2px;
+    border : 1px solid red ; 
+   }
+
+   .p-tag{
+    text-align : left ; 
+    font-weight : bolder
+   }
+.p-tag2{
+   text-align : left ;
+   font-weight : lighter; 
+}
+
+
+
+ 
+
+

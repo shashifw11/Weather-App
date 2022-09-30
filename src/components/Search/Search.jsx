@@ -5,11 +5,10 @@ import axios from "axios" ;
 import { Search2Icon} from '@chakra-ui/icons'
 import { Box } from '@chakra-ui/react'
 import { useParams } from "react-router-dom";
+import "./search.css" ; 
 // import {Select} from '@chakra-ui/react'
 
 export const Search = ({handleChange}) =>{
-
-   const Id = useParams() ; 
 
    const [text , setText] = useState("") ; 
    const [search_data , setSearch_data] = useState([]) ; 
@@ -17,32 +16,23 @@ export const Search = ({handleChange}) =>{
   
       console.log(search_data) 
     
-     let key = "XrybJhqBNzAmp7PzoIiWmMxhhy3Du6Ky"
-     // https://developer.accuweather.com/user/me/apps 
+    // let key = "XrybJhqBNzAmp7PzoIiWmMxhhy3Du6Ky"
+     // http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=${key}&q=${text} 
 
   const searchData = async ()=>{
         try{ 
-      //      setLoading(true)
-      //  axios.get(`http://localhost:8080/data?q=${text}`)
-      //  .then((data)=>{
-      //             //http://localhost:8080/data?q=${text}
-      //       return  setSearch_data(data.data) 
-      //    }) 
-
-        const res = await fetch(`http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=${key}&q=${text}`)
-           const data = await res.json() ; 
+      const key = "eef88abb5e1146f4adc133415222409"
+        const res = await fetch(`https://api.weatherapi.com/v1/search.json?key=${key}&q=${text}`)
+        const data = await res.json() ;  
            setSearch_data(data) 
-            //console.log(data); 
-      
-      }catch(err){
+         }catch(err){
                   console.log("err", err); 
               }
-              setLoading(false)
            }
 
 
  const getData = async ()=>{
-      search_data = await searchData() ; 
+     const search_data = await searchData() ; 
        // if(search_data === undefined){
        //     return false
        // }else{
@@ -70,34 +60,31 @@ export const Search = ({handleChange}) =>{
 
 
     const handleValue = (item)=>{
-          setText(item) ; 
+          setText(item.name) ; 
           setSearch_data([]);
            handleChange(item)
     }
 
-   return <div style = {{width : "400px"  ,  margin : "auto" , marginTop : "30px" }}>
-      <div style = {{display : "flex"}}>
+   return <div  className = "input-container" >
+      <div className = "input-inner-container" >
     
       <Input   
        value = {text}
-      padding = "30px" 
+       className="input"
       type = "search"  
       onKeyUp={SerachBar}  
       onChange = {(e)=>setText(e.target.value)} 
-      placeholder="Search"/>
+      placeholder="Search" / >
        {/* <Search2Icon  w={7} h={6}  /> */}
       </div >
+
     <div style = {{textAlign : "left"}}>
       {search_data.map((item,i)=> loading ? ("LOADING..."): (
       //  <Link to = {`${item.id}`}>
-         <Box onClick = {()=>handleValue(item.city)} 
-                cursor = "pointer"
-               borderRadius='lg' mt='2' 
-              fontWeight='semibold' h= {20}  
-              boxShadow = "rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;"  
-              lineHeight='20px' letterSpacing='wide'  fontSize='xl' bg='white' 
-              w='100%' p={8} color='black' key = {i}
-              ><p style = {{display : "flex"}}><p style = {{fontWeight : "lighter"}}>{item.AdministrativeArea.LocalizedName} , </p><p>{item.Country.LocalizedName}</p></p></Box>
+         <Box onClick = {()=>handleValue(item)}  
+              className = "search-box"
+               key = {i} 
+              ><p style = {{display : "flex"}}><p style = {{fontWeight : "lighter"}}>{item.name} , </p><p style = {{fontWeight : "lighter"}}>{item.region} , </p><p>{item.country}</p></p></Box>
       // </Link>
       ))}
       </div>

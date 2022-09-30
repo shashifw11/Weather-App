@@ -3,68 +3,101 @@ import {useState , useEffect} from "react"
 import { Search } from '../Search/Search'
 import axios from "axios" ; 
 import { Box } from '@chakra-ui/react'
+import "./home.css" ; 
 
 const Home = () => {
-    const [city , setCity] = useState("")
-    const [cloud , setCloud] = useState([]) ; 
-   
-      console.log(city) ; 
-    console.log(cloud.sys) ; 
 
-    
+    const [cloud , setCloud] = useState([]) ; 
+    const [city , setCity] = useState("")
+    const [lat , setLat] = useState("") ; 
+    const [lon , setLon] = useState("") ; 
+    const [country , setCountry] = useState("")
+    const [region , setRegion] = useState("")
+
+       console.log(city , lat , lon , region , country )
+         console.log("cloud" , cloud.data) ; 
+
+const handleChange = (item)=>{ 
+  console.log("=========handlechange_start")
+      setCity(item.name)  
+      setLat(item.lat) ; 
+      setLon(item.lon) ; 
+      setCountry(item.country) ; 
+      setRegion(item.region) ; 
+      getData({lati : item.lat , long: item.lon});  
      
-    const handleChange = (item)=>{
-        setCity(item) ; 
-    }
-   
-    useEffect(()=>{
-        // getData() ; 
-         console.log("kumar")
-      }, [city])
-    
+       console.log("=========handlechange_End")
+  }
+     
+// const handleData = (element)=>{
+//        currentData(element.current);
+//        dailyData(element.daily)
+//        hourlyData(element.hourly)
+//   }
+
+//   const currentData = (elem)=>{
+//         console.log( "currentData" , elem)
+//   }
+
+//   const dailyData = (elem)=>{
+//     console.log("daily" , elem)
+//   }
+
+//   const hourlyData = (elem)=>{
+//     console.log("hourly" , elem)
+//   }
+
+
 
    const key = "6e1d2dbf1530ff10a9e01675f07f8f53" 
 
-   async function getData(){
-      const res =  await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}`)
-      const data = res 
-          setCloud(data.data)
-        console.log("shashi")
-    }
+function getData({lati , long}){    
+    console.log("getData_start")
+      axios.get(`https://api.openweathermap.org/data/3.0/onecall?lat=${lati}&lon=${long}&exclude=monthly,minutely&appid=${key}&&units=metric`)
+      .then((res)=>{
+        return setCloud(res) ; 
+       }) 
+       console.log("getData_End")
+     }
 
   
 
+
   return (
-    <div style = {{ width : "430px" , height : "650px" , margin : "auto" , marginTop : "50px"  ,  borderRadius : "15px" , border : "2px solid white" , boxShadow : "rgba(0, 0, 0, 0.15) 0px 2px 8px"}}>
+    <div  className = "container">
       <Search  handleChange = {handleChange}/> 
-      {city === "" ? <div>Please Enter Your Location</div> :   <div  style = {{width : "400px" , margin : "auto"  , marginTop : "40px" }}>
-       <Box 
-         boxShadow ="rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em"
-         w='100%' p={4}  borderRadius = {20}  h = {500}>
-         <Box display = "flex" w='90%' margin = "auto" textAlign = "left" p = {3} fontSize = "40px" fontWeight = "bolder" h = {20}>{Math.round(cloud.main.temp-270)}°C <img  style = {{ width : "20%"}} src = "https://as2.ftcdn.net/v2/jpg/01/14/24/43/1000_F_114244324_HkVNU7BbaqHalaOfSUM4DjvwGygDEMRL.jpg"/></Box>
-         <Box w='90%' margin = "auto"  h = {36}></Box>
-         <Box display='flex' justifyContent="space-around">
-         <Box w = "42%" h = {14} mt = {5} p = {1} bg = "#f5faff" >
-            <p style = {{textAlign : "left" , fontWeight : "bolder"}}>Pressure</p>
-            <p style = {{textAlign : "left" , fontWeight : "lighter"}}>{cloud.main.pressure} hpa</p>
+      {city === "" ? <div>Please Enter Your Location</div> :   
+      <div className = "main-box">
+       <Box  className = "Temp-box">
+         <Box className = "Upper-temp-box"> 
+         {cloud.current.temp}°C 
+         <img  className = "temp-image"  src = "https://as2.ftcdn.net/v2/jpg/01/14/24/43/1000_F_114244324_HkVNU7BbaqHalaOfSUM4DjvwGygDEMRL.jpg"/>
+         
          </Box>
-         <Box w = "42%" h = {14} mt = {5} p = {1} bg = "#f5faff" >
-         <p style = {{textAlign : "left" ,  fontWeight : "bolder" }}>Humidity</p>
-         <p style = {{ textAlign : "left",  fontWeight : "lighter"}}>{cloud.main.humidity} %</p>
+         <Box className = "day-temp-box"></Box>                              
+         <Box className = "current-temp-box">
+         <Box className = "inside-current-box" >
+            <p className = "p-tag" >Pressure</p>
+            <p className = "p-tag2">{} hpa</p>
+         </Box>
+         <Box  className = "inside-current-box">
+         <p className = "p-tag">Humidity</p>
+         <p className = "p-tag2">{} %</p>
          </Box>
          </Box>
-         <Box display='flex' justifyContent="space-between">
-         <Box w = "30%" h = {14} mt = {5} p = {2}  >
-            <p style = {{textAlign : "left" , fontWeight : "bolder"}}>Sunrise</p>
-            <p style = {{textAlign : "left"}}>{Math.round(cloud.sys.sunrise/86400000)-12}AM</p>
+         <Box className = "current-temp-box2">
+         <Box className = "inside-current-box2">
+            <p className = "p-tag">Sunrise</p>
+            <p className = "p-tag2">{}AM</p>
          </Box>
-         <Box w = "30%" h = {14} mt = {5} p = {2}  >
-         <p style = {{textAlign : "right" , fontWeight : "bolder"}}>Sunset</p>
-         <p style = {{textAlign : "right"}}>{Math.round(cloud.sys.sunset/86400000)-12}PM</p>
+         <Box className = "inside-current-box2" >
+         <p className = "p-tag">Sunset</p>
+           <p className = "p-tag2">{}PM</p> 
          </Box>
          </Box>
     </Box>
-       </div>}
+       </div>
+        }
     </div>
   )
 }
