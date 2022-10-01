@@ -19,7 +19,7 @@
   padding : 4px ; 
   border-radius : 20px;
   height : 500px ; 
-  border : 1px solid red
+  /* border : 1px solid red */
 } 
 
 .Upper-Temp-box{
@@ -46,7 +46,7 @@
     width : 90% ; 
     margin : auto ; 
     height : 150px ; 
-    border : 1px solid red ; 
+    /* border : 1px solid red ;  */
 }
 .Temp-image{
     width : 20% ; 
@@ -55,7 +55,7 @@
 .current-Temp-box{
     display : flex ; 
     justify-content : space-around ;
-    border : 1px solid red ; 
+    /* border : 1px solid red ;  */
     height : 100px ; 
 } ; 
 
@@ -73,7 +73,7 @@
 .current-Temp-box2{
     display : flex ; 
     justify-content : space-around ;
-    border : 1px solid red ; 
+    /* border : 1px solid red ;  */
     height : 100px ; 
 } ; 
 
@@ -82,7 +82,7 @@
     height : 14px ;  
      margin-top : 5px ;  
     padding : 2px;
-    border : 1px solid red ; 
+    /* border : 1px solid red ;  */
    }
 
    .p-tag{
