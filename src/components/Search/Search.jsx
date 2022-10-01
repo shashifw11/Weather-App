@@ -1,12 +1,10 @@
 import {useState , useEffect} from "react" ; 
-import {Link} from "react-router-dom" ; 
 import { Input } from '@chakra-ui/react'
 import axios from "axios" ; 
 import { Search2Icon} from '@chakra-ui/icons'
 import { Box } from '@chakra-ui/react'
-import { useParams } from "react-router-dom";
 import "./search.css" ; 
-// import {Select} from '@chakra-ui/react'
+
 
 export const Search = ({handleChange}) =>{
 
@@ -27,19 +25,19 @@ export const Search = ({handleChange}) =>{
            setSearch_data(data) 
          }catch(err){
                   console.log("err", err); 
-              }
-           }
+          }
+      }
 
 
  const getData = async ()=>{
      const search_data = await searchData() ; 
-       // if(search_data === undefined){
-       //     return false
-       // }else{
-       //     search_data.forEach(function(item){
-       //         return setSearch_data(item)
-       //     })
-       // }
+      //  if(search_data === undefined){
+      //      return false
+      //  }else{
+      //      search_data.forEach(function(item){
+      //          return setSearch_data(item)
+      //      })
+      //  }
       search_data?.search_data.forEach(function(item){
                   return setSearch_data(item)})
    }    
@@ -79,14 +77,17 @@ export const Search = ({handleChange}) =>{
       </div >
 
     <div style = {{textAlign : "left"}}>
-      {search_data.map((item,i)=> loading ? ("LOADING..."): (
-      //  <Link to = {`${item.id}`}>
-         <Box onClick = {()=>handleValue(item)}  
+      {search_data.map((item,i)=>(
+           <Box onClick = {()=>handleValue(item)}  
               className = "search-box"
-               key = {i} 
-              ><p style = {{display : "flex"}}><p style = {{fontWeight : "lighter"}}>{item.name} , </p><p style = {{fontWeight : "lighter"}}>{item.region} , </p><p>{item.country}</p></p></Box>
-      // </Link>
-      ))}
+               key = {i}>
+              <p style = {{display : "flex"}}>
+                <p style = {{fontWeight : "lighter"}}>{item.name}</p>
+                <p style = {{fontWeight : "lighter"}}>{item.region}</p>
+                <p>{item.country}</p>
+              </p>
+            </Box>
+         ))}
       </div>
     </div>
 }
