@@ -22,7 +22,7 @@
   border : 1px solid red
 } 
 
-.Upper-temp-box{
+.Upper-Temp-box{
     display : flex ; 
     width :90%; 
     margin : auto ;  
@@ -34,17 +34,17 @@
       border : 1px solid red
 } 
 
-.day-temp-box{
+.day-Temp-box{
     width : 90% ; 
     margin : auto ; 
     height : 150px ; 
     border : 1px solid red ; 
 }
-.temp-image{
+.Temp-image{
     width : 20% ; 
 }
 
-.current-temp-box{
+.current-Temp-box{
     display : flex ; 
     justify-content : space-around ;
     border : 1px solid red ; 
@@ -62,7 +62,7 @@
     background-color : gray 
 }
 
-.current-temp-box2{
+.current-Temp-box2{
     display : flex ; 
     justify-content : space-around ;
     border : 1px solid red ; 

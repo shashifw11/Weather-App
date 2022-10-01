@@ -14,38 +14,65 @@ const Home = () => {
     const [country , setCountry] = useState("")
     const [region , setRegion] = useState("")
 
-       console.log(city , lat , lon , region , country )
+    const [temp , setTemp] = useState("")  ; 
+    const [presure , setPresure] = useState("") ; 
+    const [humidity , sethumidity] = useState("") ;
+    const [sunrise, setSunrise] = useState("")
+    const [sunset, setSunset] = useState("")
+         
+         console.log(city , lat , lon , region , country )
          console.log("cloud" , cloud.data) ; 
 
 const handleChange = (item)=>{ 
   console.log("=========handlechange_start")
-      setCity(item.name)  
+      setCity(item.name) ;
       setLat(item.lat) ; 
       setLon(item.lon) ; 
       setCountry(item.country) ; 
-      setRegion(item.region) ; 
-      getData({lati : item.lat , long: item.lon});  
-     
-       console.log("=========handlechange_End")
+      setRegion(item.region) ;  
+      getData({lati : item.lat , long: item.lon}); 
+     console.log("=========handlechange_End")
   }
+
+  useEffect(()=>{
+    getLocation() ; 
+ 
+  },[])
+
+  function  getLocation(city){ 
+    navigator.geolocation.getCurrentPosition(getLatLon)  
+ 
+    function getLatLon(city){
+     let {latitude , longitude} = city.coords   
+       console.log(latitude , longitude)  
+ 
+      axios.get(`https://api.openweathermap.org/data/3.0/onecall?lat=${latitude}&lon=${longitude}&exclude=monthly,minutely&appid=${key}&units=metric`)
+         .then((res)=>{
+           return setCloud(res)
+         })
+    }
+    
+ }
      
-// const handleData = (element)=>{
-//        currentData(element.current);
-//        dailyData(element.daily)
-//        hourlyData(element.hourly)
-//   }
+const handleData = (element)=>{ 
 
-//   const currentData = (elem)=>{
-//         console.log( "currentData" , elem)
-//   }
+    console.log("element" , element)
+      //  currentData(element.current);
+      //  dailyData(element.daily)
+      //  hourlyData(element.hourly)
+  }
 
-//   const dailyData = (elem)=>{
-//     console.log("daily" , elem)
-//   }
+  // const currentData = (elem)=>{
+  //       console.log( "currentDat)
+  // }
 
-//   const hourlyData = (elem)=>{
-//     console.log("hourly" , elem)
-//   }
+  // const dailyData = (elem)=>{
+  //   console.log("daily" , elem)
+  // }
+
+  // const hourlyData = (elem)=>{
+  //   console.log("hourly" , elem)
+  // }
 
 
 
@@ -58,7 +85,7 @@ function getData({lati , long}){
         return setCloud(res) ; 
        }) 
        console.log("getData_End")
-     }
+  }
 
   
 
@@ -66,16 +93,16 @@ function getData({lati , long}){
   return (
     <div  className = "container">
       <Search  handleChange = {handleChange}/> 
-      {city === "" ? <div>Please Enter Your Location</div> :   
+      {/* {city === "" ? <div>Please Enter Your Location</div> :    */}
       <div className = "main-box">
        <Box  className = "Temp-box">
-         <Box className = "Upper-temp-box"> 
-         {cloud.current.temp}°C 
-         <img  className = "temp-image"  src = "https://as2.ftcdn.net/v2/jpg/01/14/24/43/1000_F_114244324_HkVNU7BbaqHalaOfSUM4DjvwGygDEMRL.jpg"/>
+         <Box className = "Upper-Temp-box"> 
+         {city}°C 
+         <img  className = "Temp-image"  src = "https://as2.ftcdn.net/v2/jpg/01/14/24/43/1000_F_114244324_HkVNU7BbaqHalaOfSUM4DjvwGygDEMRL.jpg"/>
          
          </Box>
-         <Box className = "day-temp-box"></Box>                              
-         <Box className = "current-temp-box">
+         <Box className = "day-Temp-box"></Box>                              
+         <Box className = "current-Temp-box">
          <Box className = "inside-current-box" >
             <p className = "p-tag" >Pressure</p>
             <p className = "p-tag2">{} hpa</p>
@@ -85,7 +112,7 @@ function getData({lati , long}){
          <p className = "p-tag2">{} %</p>
          </Box>
          </Box>
-         <Box className = "current-temp-box2">
+         <Box className = "current-Temp-box2">
          <Box className = "inside-current-box2">
             <p className = "p-tag">Sunrise</p>
             <p className = "p-tag2">{}AM</p>
@@ -97,7 +124,7 @@ function getData({lati , long}){
          </Box>
     </Box>
        </div>
-        }
+        {/* } */}
     </div>
   )
 }

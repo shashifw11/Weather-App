@@ -14,7 +14,7 @@ function App() {
 //   console.log(data) ; 
 
   
-//  const key = "6e1d2dbf1530ff10a9e01675f07f8f53"   // default
+ const key = "6e1d2dbf1530ff10a9e01675f07f8f53"   // default
 //  //const key = "649add99e83a5e18fece68ef51cc1321"   // forcast key
 
 
