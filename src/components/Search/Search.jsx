@@ -58,9 +58,10 @@ export const Search = ({handleChange}) =>{
 
 
     const handleValue = (item)=>{
-          setText(item.name) ; 
+          setText("") ;    //item.name
           setSearch_data([]);
-           handleChange(item)
+           handleChange(item) ; 
+          
     }
 
    return <div  className = "input-container" >
