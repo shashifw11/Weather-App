@@ -26,7 +26,8 @@
     margin : auto ; 
     font-family :Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;  
     font-weight :lighter ; 
-    font-size: 14px; 
+    /* font-size: 14px;  */
+    font-size: 10px; 
     text-align :center ; 
 
     /* margin-top : 5px ;  */
