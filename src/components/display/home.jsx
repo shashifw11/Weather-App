@@ -95,8 +95,8 @@ async function getData({lati , long}){
         <p className = "date-format">{ city == "" ?cloud.timezone : city} , {moment().format('MMMM Do YYYY , h:mm a')}</p>
        <Box className = "Upper-Temp-box"> 
          <p> {temp}°C </p>
-         <p style = {{marginTop : "-15px" }}><Img src={`http://openweathermap.org/img/wn/${icon}@2x.png`} /></p>
-         <p style = {{ color : "gray" , fontSize : "15px" , padding : "10px" , marginTop : "5px"}}>{sky}</p>
+         <p className = "Temp-img" style = {{marginTop : "-15px"}}><Img src={`http://openweathermap.org/img/wn/${icon}@2x.png`} /></p>
+         <p className = "sky-item">{sky}</p>
        </Box>
          <Box className = "day-Temp-box"></Box>                              
          <Box className = "current-Temp-box">

@@ -60,9 +60,20 @@
     /* height : 150px ;  */
     /* border : 1px solid red ;  */
 }
-.Temp-image{
+/* .Temp-image{
     width : 20% ; 
+    margin-bottom : 20px ; 
+    border : 1px solid red ; 
+} */
+
+.sky-item{
+    color : gray ; 
+    font-size : 12px ; 
+    padding : 10px ; 
+    margin-top : 5px ; 
 }
+
+
 
 .current-Temp-box{
     display : flex ; 
