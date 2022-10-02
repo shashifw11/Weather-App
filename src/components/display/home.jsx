@@ -5,6 +5,7 @@ import { Search } from '../Search/Search'
 import axios from "axios" ; 
 import { Box , Img } from '@chakra-ui/react'
 import "./home.css" ; 
+import Card from './card';
 
 const Home = () => {
 
@@ -86,7 +87,9 @@ async function getData({lati , long}){
   return (
     <div  className = "container">
       <Search  handleChange = {handleChange} /> 
-    
+    <Box className = "card-container">
+      {daily.slice(0,6).map((item,i)=> <Card item = {item}/>)}
+    </Box>
       <div className = "main-box">
       <Box  className = "Temp-box">
         <p className = "date-format">{ city == "" ?cloud.timezone : city} , {moment().format('MMMM Do YYYY , h:mm a')}</p>

@@ -61,8 +61,7 @@ export const Search = ({handleChange}) =>{
           setText("") ;    //item.name
           setSearch_data([]);
            handleChange(item) ; 
-          
-    }
+      }
 
    return <div  className = "input-container" >
       <div className = "input-inner-container" >
