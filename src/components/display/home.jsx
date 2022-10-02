@@ -88,7 +88,7 @@ async function getData({lati , long}){
     <div  className = "container">
       <Search  handleChange = {handleChange} /> 
     <Box className = "card-container">
-      {daily.slice(0,6).map((item,i)=> <Card item = {item}/>)}
+      {daily.slice(0,6).map((item,i)=> <Card key = {i} item = {item}/>)}
     </Box>
       <div className = "main-box">
       <Box  className = "Temp-box">

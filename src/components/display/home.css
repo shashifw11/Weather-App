@@ -1,8 +1,8 @@
 .container{
     width  : 430px ;
-    height : 750px ;
+    height : 760px ;
      margin : auto ;
-      margin-top : 50px  ; 
+      /* margin-top : 50px  ;  */
        border-radius : 15px ;
        border : 2px solid white ; 
        box-shadow : rgba(0, 0, 0, 0.15) 0px 2px 8px ; 
@@ -60,19 +60,17 @@
 .current-Temp-box{
     display : flex ; 
     justify-content : space-around ;
-    /* border : 1px solid red ;  */
     height : 100px ; 
-} ; 
-
-
-/* w = "42%" h = {14} mt = {5} p = {1} bg = "#f5faff"  */
+    /* border: 1px solid red; */
+}  
 
 .inside-current-box{
     width : 42% ; 
     height : 40px ; 
     margin-top : 10px ; 
     padding : 10px ; 
-    background-color : gray 
+    /* border : 1px solid red ;  */
+    
 }
 
 .current-Temp-box2{
@@ -80,6 +78,8 @@
     justify-content : space-around ;
     /* border : 1px solid red ;  */
     height : 100px ; 
+    /* text-align: center; */
+   
 } ; 
 
    .inside-current-box2{
@@ -88,14 +88,17 @@
      margin-top : 5px ;  
     padding : 2px;
     /* border : 1px solid red ;  */
+   
    }
 
    .p-tag{
-    text-align : left ; 
-    font-weight : bolder
+    text-align : center ; 
+    font-weight : bolder ; 
+ 
+    
    }
 .p-tag2{
-   text-align : left ;
+   text-align : center ;
    font-weight : lighter; 
 }
 
