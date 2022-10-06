@@ -7,6 +7,8 @@ import {useState , useEffect} from "react"
 import axios from 'axios';
 import React from "react" ; 
 
+
+
 function App() {
 
 // const [city , setCity] = useState("usa") ;
@@ -14,7 +16,7 @@ function App() {
 //   console.log(data) ; 
 
   
- const key = "6e1d2dbf1530ff10a9e01675f07f8f53"   // default
+// const key = "6e1d2dbf1530ff10a9e01675f07f8f53"   // default
 //  //const key = "649add99e83a5e18fece68ef51cc1321"   // forcast key
 
 
@@ -47,8 +49,9 @@ function App() {
     <div className="App">
        <Routes>
         <Route path = "/" element = { <Home/>}/>
-       
-     </Routes> 
+       </Routes>  
+    
+   
 
      {/* <input  style = {{border : "1px solid black"}} type = "text" placeholder = "Enter City"/>
      <button  style = {{border : "1px solid black"}} onClick = {handleChange}>Search</button>  

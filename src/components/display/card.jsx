@@ -6,7 +6,7 @@ import {useState} from "react" ;
 const Card = ({item}) => {
     const[day , setDat] = useState("") ; 
 
-      console.log(item) ; 
+      // console.log(item) ; 
       var date = new Date() ; 
       var days = date.getDay() ;  
     

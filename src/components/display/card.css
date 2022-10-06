@@ -20,23 +20,20 @@
  }
 
 .card-box p{
-    /* border : 1px solid red;  */
     width : 80%; 
     height : 40px ; 
     margin : auto ; 
     font-family :Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;  
     font-weight :lighter ; 
-    /* font-size: 14px;  */
     font-size: 10px; 
     text-align :center ; 
-
-    /* margin-top : 5px ;  */
 }
 
 .card-box p:nth-child(1){
     /* margin-top: 5px; */
-    font-weight: bolder;
-    font-size: 16px;
+    font-weight: bold ; 
+    font-family :'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ; 
+    font-size: 13px;
 }
 
 .card-box p:nth-child(2){

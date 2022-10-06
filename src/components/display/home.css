@@ -27,21 +27,18 @@
    box-shadow : rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em ; 
   padding : 4px ; 
   border-radius : 20px;
-  /* height : 500px ;  */
-     height : 310px ;
-  /* border : 1px solid red */
+     height : 340px ;
 } 
 
 .Upper-Temp-box{
     display : flex ; 
     width :90%; 
     margin : auto ; 
-      padding : 15px ;  
-      /* font-size : 40px;  */
+      padding : 10px ;  
       font-size : 30px; 
+      color : gray ; 
       font-weight : bolder; 
-      /* height :100px ;  */
-      height :70px ; 
+      height :60px ; 
       border-radius : 10px ; 
       font-family :'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
       justify-content:space-between  ; 
@@ -49,7 +46,6 @@
 } 
 .date-format{
     font-family :sans-serif;
-    /* font-size :large ;  */
     font-size :small ;  
     text-overflow: inherit;
 }
@@ -57,14 +53,12 @@
 .day-Temp-box{
     width : 90% ; 
     margin : auto ; 
-    /* height : 150px ;  */
+    height : 130px ; 
     /* border : 1px solid red ;  */
+    overflow-y: hidden;
+    overflow-x: hidden;
+    margin-top: -7px;
 }
-/* .Temp-image{
-    width : 20% ; 
-    margin-bottom : 20px ; 
-    border : 1px solid red ; 
-} */
 
 .sky-item{
     color : gray ; 
@@ -73,51 +67,47 @@
     margin-top : 5px ; 
 }
 
-
-
 .current-Temp-box{
     display : flex ; 
     justify-content : space-around ;
-    height : 100px ; 
-    /* border: 1px solid red; */
+    height : 36px ; 
 }  
 
 .inside-current-box{
     width : 42% ; 
-    height : 40px ; 
-    margin-top : 10px ; 
-    padding : 10px ; 
-    /* border : 1px solid red ;  */
-    
+    height : 35px ; 
+    font-size: 11px;
+    font-family :Arial, Helvetica, sans-serif ; 
+ background-color: rgb(234, 244, 234);
 }
 
 .current-Temp-box2{
     display : flex ; 
-    justify-content : space-around ;
+    justify-content :space-around ; 
     /* border : 1px solid red ;  */
-    height : 100px ; 
+    height : 35px ; 
+    margin-top: 5px
     /* text-align: center; */
-   
 } ; 
-
-   .inside-current-box2{
-    width : 30% ;  
-    height : 14px ;  
-     margin-top : 5px ;  
-    padding : 2px;
-    /* border : 1px solid red ;  */
+.inside-current-box2{
+   width : 30% ;  
+   height : 14px ;  
+}
    
-   }
-
-   .p-tag{
+.p-tag{
     text-align : center ; 
     font-weight : bolder ; 
- 
-    
-   }
+    /* border : 1px solid red ;  */
+    font-size: 11px;
+    font-family :Arial, Helvetica, sans-serif ; 
+}
+
 .p-tag2{
    text-align : center ;
-   font-weight : lighter; 
+   font-weight : lighter;
+   font-size: 11px;
+   
+   /* border : 1px solid red ;  */
 }
 
 

@@ -6,6 +6,8 @@ import axios from "axios" ;
 import { Box , Img } from '@chakra-ui/react'
 import "./home.css" ; 
 import Card from './card';
+import LineChart from '../graph/Chart';
+
 
 const Home = () => {
 
@@ -28,10 +30,11 @@ const Home = () => {
     const [daily , setDaily] = useState([]) ; 
     const [hourly , setHourly] = useState([]) ; 
          
-    //  console.log(city , lat , lon , region , country )
-     console.log("cloud" , cloud) ; 
-   //console.log(current, icon, temp ,sky ,  presure , humidity , sunrise , sunset , daily , hourly ) ;  
-          
+     //  console.log(city , lat , lon , region , country )
+       console.log("cloud" , cloud) ; 
+   //    console.log(current, icon, temp ,sky ,  presure , humidity , sunrise , sunset , daily , hourly ) ;  
+     //     console.log(hourly) ; 
+
 const handleChange = (item)=>{ 
       setCity(item.name) ;
       setLat(item.lat) ; 
@@ -98,7 +101,11 @@ async function getData({lati , long}){
          <p className = "Temp-img" style = {{marginTop : "-15px"}}><Img src={`http://openweathermap.org/img/wn/${icon}@2x.png`} /></p>
          <p className = "sky-item">{sky}</p>
        </Box>
-         <Box className = "day-Temp-box"></Box>                              
+         <Box className = "day-Temp-box"> 
+          
+         <LineChart hourly = {hourly}/>
+
+          </Box>                              
          <Box className = "current-Temp-box">
          <Box className = "inside-current-box" >
             <p className = "p-tag" >Pressure</p>
