@@ -2,7 +2,7 @@
     /* width  : 430px ; */
     width  : 323px ;
     /* height : 760px ; */
-    height : 577px ;
+    height : 600px ;
      margin : auto ;
       /* margin-top : 50px  ;  */
        border-radius : 15px ;
@@ -27,7 +27,8 @@
    box-shadow : rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em ; 
   padding : 4px ; 
   border-radius : 20px;
-     height : 340px ;
+     /* height : 360px ; */
+     height : 390px
 } 
 
 .Upper-Temp-box{
@@ -71,6 +72,7 @@
     display : flex ; 
     justify-content : space-around ;
     height : 36px ; 
+    margin-top: 5px;
 }  
 
 .inside-current-box{
