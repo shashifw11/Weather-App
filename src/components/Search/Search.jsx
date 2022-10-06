@@ -19,27 +19,30 @@ export const Search = ({handleChange}) =>{
 
   const searchData = async ()=>{
         try{ 
-      const key = "eef88abb5e1146f4adc133415222409"
+      const key = "eef88abb5e1146f4adc133415222409" 
+       if(text !== ""){
         const res = await fetch(`https://api.weatherapi.com/v1/search.json?key=${key}&q=${text}`)
         const data = await res.json() ;  
            setSearch_data(data) 
-         }catch(err){
+       }
+       }catch(err){
                   console.log("err", err); 
           }
       }
 
 
  const getData = async ()=>{
-     const search_data = await searchData() ; 
-      //  if(search_data === undefined){
-      //      return false
-      //  }else{
-      //      search_data.forEach(function(item){
-      //          return setSearch_data(item)
-      //      })
-      //  }
-      search_data?.search_data.forEach(function(item){
-                  return setSearch_data(item)})
+     const search_data = await searchData() ;  
+
+       if(search_data === undefined){
+           return false
+       }else{
+           search_data.forEach(function(item){
+               return setSearch_data(item)
+           })
+       }
+      // search_data?.search_data.forEach(function(item){
+      //             return setSearch_data(item)})
    }    
 
    const Debounce=(fn,d)=>{
@@ -59,7 +62,7 @@ export const Search = ({handleChange}) =>{
 
     const handleValue = (item)=>{
           setText("") ;    //item.name
-          setSearch_data([]);
+          setSearch_data([]); 
            handleChange(item) ; 
       }
 
