@@ -20,7 +20,7 @@ export const Search = ({handleChange}) =>{
   const searchData = async ()=>{
         try{ 
       const key = "eef88abb5e1146f4adc133415222409" 
-       if(text !== ""){
+       if(text.length !== 0 && text !== ""  && text !== " "){
         const res = await fetch(`https://api.weatherapi.com/v1/search.json?key=${key}&q=${text}`)
         const data = await res.json() ;  
            setSearch_data(data) 
