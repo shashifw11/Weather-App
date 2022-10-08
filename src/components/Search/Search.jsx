@@ -33,7 +33,7 @@ export const Search = ({handleChange}) =>{
       const key = "6e1d2dbf1530ff10a9e01675f07f8f53" ; 
       const limit = 10 ; 
        if(text.length !== 0 && text !== ""  && text !== " "){
-        const res = await fetch(`http://api.openweathermap.org/geo/1.0/direct?appid=${key}&q=${text}&limit=${limit}`)
+        const res = await fetch(`https://api.openweathermap.org/geo/1.0/direct?appid=${key}&q=${text}&limit=${limit}`)
         const data = await res.json() ;  
            setSearch_data(data) 
        }
