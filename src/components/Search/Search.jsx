@@ -16,17 +16,29 @@ export const Search = ({handleChange}) =>{
     
     // let key = "XrybJhqBNzAmp7PzoIiWmMxhhy3Du6Ky"
      // http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=${key}&q=${text} 
+     // http://dataservice.accuweather.com/locations/v1/search  
+
+     // search by text
+     //https://api.weatherapi.com/v1/search.json?key=${key}&q=${text}
+     // eef88abb5e1146f4adc133415222409
+
+     // search by city
+     //http://dataservice.accuweather.com/locations/v1/cities/search
+
+  //http://api.openweathermap.org/geo/1.0/direct?q={city name}&limit={limit}&appid={API key}
+
 
   const searchData = async ()=>{
         try{ 
-      const key = "eef88abb5e1146f4adc133415222409" 
+      const key = "6e1d2dbf1530ff10a9e01675f07f8f53" ; 
+      const limit = 20 ; 
        if(text.length !== 0 && text !== ""  && text !== " "){
-        const res = await fetch(`https://api.weatherapi.com/v1/search.json?key=${key}&q=${text}`)
+        const res = await fetch(`http://api.openweathermap.org/geo/1.0/direct?appid=${key}&q=${text}&limit=10`)
         const data = await res.json() ;  
            setSearch_data(data) 
        }
        }catch(err){
-                  console.log("err", err); 
+            console.log("err", err); 
           }
       }
 
@@ -85,8 +97,8 @@ export const Search = ({handleChange}) =>{
               className = "search-box"
                key = {i}>
               <p style = {{display : "flex"}}>
-                <p style = {{fontWeight : "lighter"}}>{item.name}</p>
-                <p style = {{fontWeight : "lighter"}}>{item.region}</p>
+                <p style = {{fontWeight : "lighter"}}>{item.name}</p> , 
+                <p style = {{fontWeight : "lighter"}}>{item.state}</p> , 
                 <p>{item.country}</p>
               </p>
             </Box>

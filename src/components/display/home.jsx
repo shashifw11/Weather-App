@@ -40,7 +40,7 @@ const handleChange = (item)=>{
       setLat(item.lat) ; 
       setLon(item.lon) ; 
       setCountry(item.country) ; 
-      setRegion(item.region) ;  
+      setRegion(item.state) ;  
       getData({lati : item.lat , long: item.lon}); 
   }
   
